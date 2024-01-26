@@ -1,5 +1,4 @@
 // Factorial
-
 function factorial(n){
   let result = 1;
   for(i=2; i<=n; i++){
@@ -11,7 +10,6 @@ function factorial(n){
 console.log(factorial(0))
 
 // Fibonacci
-
 function fibonacci (n) {
   const arr = [0,1]
   for(i=2; i<n; i++) {
@@ -64,7 +62,6 @@ function linearSearch(arr, target) {
 console.log(linearSearch([1,3,5], 5))
 
 // Binary search
-
 function binarySearch(arr, target) {
   let leftIndex = 0
   let rightIndex = arr.length-1
@@ -84,6 +81,7 @@ function binarySearch(arr, target) {
 
 console.log(binarySearch([-5,2,4,6,10], 6))
 
+// Binary search using recursion
 function recursiveBinarySearch(arr, target) {
   return search(arr, target, 0, arr.length - 1)
 }
@@ -108,7 +106,6 @@ function search(arr, target, leftIndex, rightIndex) {
 console.log(recursiveBinarySearch([-5,2,4,6,10], 1))
 
 // Bubble sort
-
 function bubbleSort(arr) {
   let swapped = false
   do{

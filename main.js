@@ -106,3 +106,37 @@ function search(arr, target, leftIndex, rightIndex) {
 }
 
 console.log(recursiveBinarySearch([-5,2,4,6,10], 1))
+
+// Bubble sort
+
+function bubbleSort(arr) {
+  let swapped = false
+  do{
+    for (let index = 0; index < arr.length - 1; index++) {
+      if(arr[index] > arr[index+1]) {
+        let temp = arr[index]
+        arr[index] = arr[index+1]
+        arr[index+1] = temp
+        swaped = true
+      }
+    }
+  }while (swapped)
+  return arr
+}
+console.log(bubbleSort([-5,4,2,7,6,10]))
+
+// insertion sort
+function insertionSort(arr) {
+  for (let index = 1; index < arr.length; index++) {
+    let numberToInsert = arr[index]
+    let j = index -1
+    while(j>=0 && arr[j] > numberToInsert) {
+      arr[j+1] = arr[j]
+      j= j-1
+    }
+    arr[j+1] = numberToInsert
+  }
+  }
+}
+
+console.log(insertionSort([-5,4,2,7,6,10]))

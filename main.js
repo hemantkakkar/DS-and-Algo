@@ -137,3 +137,52 @@ function insertionSort(arr) {
 }
 
 console.log(insertionSort([-5,4,2,7,6,10]))
+
+// quick sort
+function quickSort(arr) {
+  if(arr.length < 2) {
+    return arr
+  }
+  
+  let pivot = arr[arr.length-1]
+  let left = [], right = []
+  for (let index = 0; index < arr.length -1; index++) {
+    if(arr[index] < pivot) {
+      left.push(arr[index])
+    } else {
+      right.push(arr[index])
+    }
+  }
+  return [...quickSort(left), pivot, ...quickSort(right)]
+  
+}
+
+console.log(quickSort([-5,4,2,7,6,10]))
+
+// merge sort
+function mergeSort(arr) {
+  if(arr.length < 2) {
+    return arr
+  }
+  const mid = Math.floor(arr.length/2)
+  const leftArr = arr.slice(0, mid)
+  const rightArr = arr.slice(mid)
+  return merge(mergeSort(leftArr), mergeSort(rightArr))
+
+}
+
+function merge(left, right) {
+  const sortedArr = []
+  while(left.length && right.length) {
+    if(left[0] <= right[0]) {
+      sortedArr.push(left.shift())
+    }
+    else {
+      sortedArr.push(right.shift())
+    } 
+  }
+  return [...sortedArr, ...left, ...right]
+}
+
+console.log(mergeSort([-5,4,2,7,6,10]))
+

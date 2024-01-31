@@ -186,3 +186,36 @@ function merge(left, right) {
 
 console.log(mergeSort([-5,4,2,7,6,10]))
 
+function cartesianProduct(arr1, arr2) {
+  const result = []
+  for(let i=0; i<arr1.length; i++) {
+    for(let j=0; j<arr2.length; j++) {
+        result.push([arr1[i], arr2[j]])
+    }
+  }
+  return result
+}
+
+console.log(cartesianProduct([1,2], [3,4,5]))
+
+function climbingStaircase(n) {
+  const numOfWays = [1,2]
+  for(i=2; i<=n; i++) {
+    numOfWays[i] = numOfWays[i-1] + numOfWays[i-2]
+  }
+  return numOfWays[n-1]
+}
+
+console.log(climbingStaircase(4))
+
+function towerOfHanoi(n, fromRod, toRod, usingRod) {
+  if(n == 1) {
+    console.log("Move disk 1 from rod", fromRod, "to rod", toRod)
+    return
+  }
+  towerOfHanoi(n-1, fromRod, usingRod, toRod)
+  console.log("Mover disk", n, "from rod", fromRod, "to rod", toRod)
+  towerOfHanoi(n-1, usingRod, toRod, fromRod)
+}
+
+console.log(towerOfHanoi(3, 'A', 'C', 'B'))
